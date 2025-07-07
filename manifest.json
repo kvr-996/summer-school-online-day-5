@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Weather App",
+  "version": "1.0",
+  "description": "Find out weather with every click!",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["geolocation"],
+  "host_permissions": ["https://api.openweathermap.org/*"],
+  "icons": {
+    "16": "icons/weather.png",
+    "48": "icons/weather.png",
+    "128": "icons/weather.png"
+  }
+}

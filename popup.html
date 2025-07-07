@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="fetch">
+        <h1>Weather App</h1>
+        <p id="current_loc"></p>
+        <button id="weather_fetch">Fetch Weather</button>
+      </div>
+
+      <div class="details">
+        <h2 class="details-heading">Weather Details</h2>
+        <p id="weather_result" class="status-text"></p>
+        <img
+          src="https://openweathermap.org/img/wn/01d@2x.png"
+          alt="Weather Icon"
+          id="weather_icon"
+        />
+
+        <table id="weather_table">
+          <tbody>
+            <tr>
+              <td><strong>Location</strong></td>
+              <td id="location_name"></td>
+            </tr>
+            <tr>
+              <td><strong>Country</strong></td>
+              <td id="country"></td>
+            </tr>
+            <tr>
+              <td><strong>Latitude</strong></td>
+              <td id="latitudeText"></td>
+            </tr>
+            <tr>
+              <td><strong>Longitude</strong></td>
+              <td id="longitudeText"></td>
+            </tr>
+            <tr>
+              <td><strong>Description</strong></td>
+              <td id="weather_desc"></td>
+            </tr>
+            <tr>
+              <td><strong>Temperature</strong></td>
+              <td id="temp"></td>
+            </tr>
+            <tr>
+              <td><strong>Max Temp</strong></td>
+              <td id="temp_max"></td>
+            </tr>
+            <tr>
+              <td><strong>Min Temp</strong></td>
+              <td id="temp_min"></td>
+            </tr>
+            <tr>
+              <td><strong>Wind Speed</strong></td>
+              <td id="wind_speed"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <footer>
+        <h6>&copy Made by KVR ;</h6>
+      </footer>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
