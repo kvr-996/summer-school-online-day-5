@@ -98,3 +98,7 @@ table td:first-child {
   font-weight: bold;
   width: 45%;
 }
+
+footer h6{
+  color: white;
+}
