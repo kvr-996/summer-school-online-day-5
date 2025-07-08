@@ -84,11 +84,33 @@ async function getWeather() {
   localStorage.setItem("temp_max", data.main.temp_max);
   localStorage.setItem("temp_min", data.main.temp_min);
   localStorage.setItem("wind_speed", data.wind.speed);
+  localStorage.setItem("weather_timestamp", Date.now().toString());
+
   details[0].style.display = "block";
   fetched[0].style.display = "none";
 }
 
 async function combine() {
+  const timeStamp = localStorage.getItem("weather_timestamp");
+  const now = Date.now();
+  if (timeStamp && now - parseInt(timeStamp) < 10 * 60 * 1000) {
+    location_name.textContent = localStorage.getItem("name");
+    country.textContent = localStorage.getItem("country");
+    latitudeText.textContent = localStorage.getItem("latitude");
+    longitudeText.textContent = localStorage.getItem("longitude");
+    weather_desc.textContent = localStorage.getItem("weather_desc");
+    temp.textContent = localStorage.getItem("temp");
+    temp_max.textContent = localStorage.getItem("temp_max") + " C";
+    temp_min.textContent = localStorage.getItem("temp_min") + " C";
+    wind_speed.textContent = localStorage.getItem("wind_speed");
+    icon.src = `https://openweathermap.org/img/wn/${localStorage.getItem(
+      "icon"
+    )}@2x.png`;
+
+    details[0].style.display = "block";
+    fetched[0].style.display = "none";
+    return;
+  }
   try {
     const pos = await getCurrLoc();
     success(pos);
